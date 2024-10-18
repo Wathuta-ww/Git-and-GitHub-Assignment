@@ -12,11 +12,31 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire|neon">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
     
 </head>
 <body>
     <div class="header">
-        
+        <div>
+		<nav id="navbar">
+			<img src="Images/logo101.png" class="logo" alt="">
+			<ul id="menu">
+				<li>
+					<a href=""><button class="button btn1">HOME</button></a>
+				</li>
+				<li>
+					<a href=""><button class="button btn1">ABOUT</button></a>
+				</li>
+				<li>
+					<a href=""><button class="button btn1">CONTACT</button></a>
+				</li>
+				<li>
+					<a href=""><button class="button btn1">COLLECTION</button></a>
+				</li>
+			</ul>
+		</nav>
+	    </div>
         <div class="main">
             <div class="content">
             <h1 class="font-effect-neon">Best games in<br> the market.</h1>
@@ -25,5 +45,58 @@
             </div>
         </div>
     </div>
+	<!--Slideshow-->
+	<div id="slideshow">
+		<div class="container">
+		<input type="radio" name="images" id="i1">
+		<input type="radio" name="images" id="i2">
+		<input type="radio" name="images" id="i3">
+		<input type="radio" name="images" id="i4">
+
+		<div class="slide_img" id="one">
+			<img src="Images/img1.jpg" alt="">
+			<label for="i4" class="pre"></label>
+			<label for="i2" class="nxt"></label>
+		</div>
+		<div class="slide_img" id="two">
+			<img src="Images/img2.jpg" alt="">
+			<label for="i1" class="pre"></label>
+			<label for="i3" class="nxt"></label>
+		</div>
+		<div class="slide_img" id="three">
+			<img src="Images/img3.jpg" alt="">
+			<label for="i2" class="pre"></label>
+			<label for="i4" class="nxt"></label>
+		</div>
+		<div class="slide_img" id="four">
+			<img src="Images/img4.jpg" alt="">
+			<label for="i3" class="pre"></label>
+			<label for="i1" class="nxt"></label>
+		</div>
+		<div class="nav">
+			<label class="dots" id="dot1" for="i1" ></label>
+			<label class="dots" id="dot2" for="i2"></label>
+			<label class="dots" id="dot3" for="i3"></label>
+			<label class="dots" id="dot4" for="i4"></label>
+		</div>
+	</div>
+	</div>
+
+	<!--Script for scrolling-->
+	<script type="text/javascript">
+		const navbar = document.getElementById("navbar");
+		const menu = document.getElementById("menu");
+
+		//pageYOffset deprecated and replaced with scrollY
+		window.onscroll = function () {
+			if (window.scrollY >= menu.offsetTop) {
+				navbar.classList.add("sticky");
+			}
+			else{
+				navbar.classList.remove("sticky");
+			}
+		}
+	</script>
+
 </body>
 </html>
